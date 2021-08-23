@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>My portfolio</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<!-- Place favicon.ico in the root directory -->
+
+	<link rel="stylesheet" href="/stylesheets/vendor.css">
+	<link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+		.image{
+			width: 450px;
+			height: 250px;
+			border-radius: 10px;
+		}
+	</style>
+</head>
+<body class="ish--hc1 ish--htc2">
+
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+
+
+<!-- sidebar -->
+<a class="ish-sbar-overlay" href="#close"></a>
+<a class="ish-sbar-btn ish-icon-list-add" href="#open">
+	<span class="ish-sbar-btn__desc">Click to open sidebar</span>
+</a>
+<div class="ish-sbar">
+	<div class="ish-sbar__inner">
+		<a class="ish-sbar__logo" href="./">My <span>|</span> Portfolio</a>
+
+		<p>That is my first project portfolio so i try to make it perfect.</p>
+		<p>it's a portfolio website with a combination of fontend and backend.</p>
+		<p><a href="http://localhost:2002/chi_tiet_san_pham.61163fe3bb55eff29bbbd5f2">Read more about me</a></p>
+
+		<div class="ish-icons-group">
+			<a class="ish-icons-group__icon ish-icon-twitter" href="https://twitter.com/khai20023" target="_blank"></a>
+			<a class="ish-icons-group__icon ish-icon-behance" href="https://www.behance.net/mattimling" target="_blank"></a>
+			<a class="ish-icons-group__icon ish-icon-dribbble" href="https://dribbble.com/MattImling" target="_blank"></a>
+			<a class="ish-icons-group__icon ish-icon-facebook" href="https://www.facebook.com/profile.php?id=100010634795802" target="_blank"></a>
+		</div>
+
+		<!-- close btn -->
+		<a class="ish-sbar-close-btn ish-icon-cancel" href="#close">
+			<span class="ish-sbar-close-btn__desc">Close ( ESC )</span>
+		</a>
+	</div>
+</div>
+<!-- sidebar end -->
+
+
+
+<div class="ish-wrapper">
+
+	<div class="ish-wrapper__inner">
+
+
+
+		<!-- header -->
+		<header class="ish-row ish-header">
+			<div class="ish-header__logo">
+				<a class="ish-header__link" href="./">My <span>|</span> Portfolio</a>
+			</div>
+			<div class="ish-header__tagline">
+				That is all thing about me
+			</div>
+		</header>
+		<!-- header end -->
+
+
+
+		<!-- lead -->
+		<a class="ish-row ish-fullrow ish-lead" href="chi_tiet_san_pham.<%=data[0]._id%>">
+			<span class="ish-lead__caption ish-icon-up">Featured Portfolio</span>
+			<div class="ish-lead__image">
+				<img src="<%=data[0].bigImage%>" alt="work in silent">
+			</div>
+			<h1 class="ish-lead__headline">
+				<span class="ish-lead__headline-inner"><%=data[0].name %><br><%=data[0].use1%></span>
+			</h1>
+		</a>
+		<!-- lead end -->
+
+
+
+		<!-- content -->
+		<div class="ish-row ish-content ish-portfolio ish-macy">
+
+      <!-- main content -->
+			<ul class="ish-portfolio-item ish-portfolio-filter">
+				<li class="ish-portfolio-filter__item ish-portfolio-filter--title"><h5>About me:</h5></li>
+				<li class="ish-portfolio-filter__item"><a class="ish-portfolio-filter__link ish-portfolio-filter__link--active" href="#all">All</a></li>
+				<%data.forEach(function(mot){
+				if(mot.cat=="sub"&&mot.type=="main"){ %>
+				<li class="ish-portfolio-filter__item"><a class="ish-portfolio-filter__link" href="#<%=mot.use%>"><%=mot.use%></a></li>
+				<%}})%>
+			</ul>
+			<%data.forEach(function(mot){
+			if(mot.cat=="sub"){ %>
+			<a class="ish-portfolio-item ish--tc13 ish-portfolio-<%=mot.use%>" href="/detail/<%=mot.linkSeo%>.<%=mot._id%>">
+				<div class="ish-portfolio-item__image-container">
+					<img class="ish-portfolio-item__image image" src="<%=mot.bigImage1%>" alt="business cards">
+				</div>
+				<div class="ish-portfolio-item__desc">
+					<span class="ish-portfolio-item__title"><%=mot.name1 %></span>
+					<span class="ish-portfolio-item__subtitle"><%=mot.use %></span>
+				</div>
+			</a>
+
+			<%}}) %>
+			
+
+      <!-- main content end -->
+		</div>
+		<!-- content end -->
+
+
+		<!-- footer -->
+		<div class="ish-footer">
+			<div class="ish-footer__wrapper">
+				<div class="ish-footer__wrapper-inner">
+					Wert <a href="https://themes.ishyoboy.com/wert-html/" target="_blank">Theme</a><span> ~ </span>
+					Proudly powered by <a href="https://wordpress.org/" target="_blank">WordPress</a><span> ~ </span>
+					Crafted by <a href="https://ishyoboy.com/" target="_blank">IshYoBoy.com</a>
+				</div>
+			</div>
+		</div>
+		<!-- footer end -->
+
+
+
+	</div>
+
+
+
+	<!-- sidenav -->
+	<div class="ish-sidenav">
+		<div class="ish-sidenav-inner">
+
+			<div class="ish-sidenav-menu">
+				<a href="" class="ish-sidenav-menu__icon">
+					<div id="nav-icon3">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</a>
+			</div>
+
+			<div class="ish-sidenav-socials">
+				<a class="ish-sidenav-socials__icon ish-icon-twitter" href="https://twitter.com/khai20023" target="_blank"></a>
+				<a class="ish-sidenav-socials__icon ish-icon-behance" href="https://www.behance.net/mattimling" target="_blank"></a>
+				<a class="ish-sidenav-socials__icon ish-icon-dribbble" href="https://dribbble.com/MattImling" target="_blank"></a>
+				<a class="ish-sidenav-socials__icon ish-icon-facebook" href="https://www.facebook.com/profile.php?id=100010634795802" target="_blank"></a>
+			</div>
+
+			<div class="ish-sidenav-btt">
+				<a class="ish-sidenav-btt__icon ish-icon-up" href="#top"></a>
+			</div>
+
+		</div>
+	</div>
+	<!-- sidenav end -->
+
+
+
+	<!-- floated nav & search -->
+	<div class="ish-navigation">
+
+		<a class="ish-navigation__close-btn ish-icon-cancel" href="#close">
+			<span class="ish-navigation__close-btn-desc">Close ( ESC )</span>
+		</a>
+
+		<ul class="ish-navigation__menu">
+			<li class="ish-navigation__item">
+				<a class="ish-navigation__logo" href="./">My <span>|</span> Portfolio</a>
+			</li>
+            <%data.forEach(function(mot){%>
+			<li class="ish-navigation__item ">
+				<a href="<%=mot.link%>" class="ish-navigation__link"><%=mot.name1 %></a>
+				
+			</li>
+            <%})%>
+			
+		
+
+			<li class="ish-navigation__resp-icon"><a class="ish-sc-el ish-sc-icon ish-icon-twitter ish--tc3" href="https://twitter.com/ishyoboydotcom" target="_blank"></a></li>
+			<li class="ish-navigation__resp-icon"><a class="ish-sc-el ish-sc-icon ish-icon-dribbble ish--tc3" href="https://dribbble.com/MattImling" target="_blank"></a></li>
+			<li class="ish-navigation__resp-icon"><a class="ish-sc-el ish-sc-icon ish-icon-behance ish--tc3" href="https://www.behance.net/mattimling" target="_blank"></a></li>
+			<li class="ish-navigation__resp-icon"><a class="ish-sc-el ish-sc-icon ish-icon-facebook ish--tc3" href="https://www.facebook.com/ishyoboydotcom" target="_blank"></a></li>
+
+		</ul>
+
+	</div>
+	<!-- floated nav & search end -->
+
+
+
+	<!-- resp bottom navigation -->
+	<div class="ish-resp-nav">
+		<a class="ish-resp-nav__icon ish-resp-nav__icon--sidebar ish-icon-list-add" href=""></a>
+		<a class="ish-resp-nav__icon ish-resp-nav__icon--nav ish-icon-article" href=""></a>
+		<a class="ish-resp-nav__icon ish-resp-nav__icon--btt ish-icon-up" href=""></a>
+	</div>
+	<!-- resp bottom navigation end -->
+
+</div>
+
+<script src="/javascripts/plugins.js"></script>
+<script src="/javascripts/main.js"></script>
+
+</body>
+</html>
